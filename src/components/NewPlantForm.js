@@ -8,7 +8,7 @@ function NewPlantForm({onNewFormSubmit}) {
     const newPlant = {
       name: e.target.name.value,
       image: e.target.image.value,
-      price: e.target.price.value,
+      price: Number(e.target.price.value),
     }
     onNewFormSubmit(newPlant)
     e.target.reset();

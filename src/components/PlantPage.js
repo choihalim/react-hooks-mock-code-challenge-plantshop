@@ -7,12 +7,32 @@ function PlantPage() {
   const [plants, setPlants] = useState([]);
   const [plantSearch, setPlantSearch] = useState("");
 
-  const plantsURL = "http://localhost:6001/plants"
+  const plantsURL = "http://localhost:6001/plants/"
 
   function fetchPlants() {
     fetch(plantsURL)
-      .then(r => r.json())
+      .then(res => res.json())
       .then(setPlants)
+  }
+
+  function updatePrice(plant, updatedPrice) {
+    fetch(`${plantsURL}${plant.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ "price": Number(updatedPrice) })
+    })
+      .then(res => res.json())
+      .then(updatedPlant => setPlants([...plants, updatedPlant]));
+  }
+
+  function onDeletePlant(deletedPlant) {
+    fetch(`${plantsURL}${deletedPlant.id}`, {
+      method: "DELETE"
+    })
+      .then(res => res.json())
+      .then(setPlants(plants.filter(plant => plant !== deletedPlant)))
   }
 
   function onPlantSearch(search) {
@@ -39,7 +59,11 @@ function PlantPage() {
     <main>
       <NewPlantForm onNewFormSubmit={onNewFormSubmit} />
       <Search plantSearch={plantSearch} onPlantSearch={onPlantSearch} />
-      <PlantList plants={plantSearch === "" ? plants : filteredPlants} />
+      <PlantList
+        plants={plantSearch === "" ? plants : filteredPlants}
+        onDeletePlant={onDeletePlant}
+        updatePrice={updatePrice}
+      />
     </main>
   );
 }

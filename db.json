@@ -43,34 +43,10 @@
       "price": 55
     },
     {
-      "name": "ge",
-      "image": "ge",
-      "price": "111",
+      "name": "gg",
+      "image": "test",
+      "price": 0.03,
       "id": 8
-    },
-    {
-      "name": "test",
-      "image": "test",
-      "price": "999",
-      "id": 9
-    },
-    {
-      "name": "test",
-      "image": "test",
-      "price": "999",
-      "id": 10
-    },
-    {
-      "name": "test",
-      "image": "test",
-      "price": "999",
-      "id": 11
-    },
-    {
-      "name": "test",
-      "image": "test",
-      "price": "999",
-      "id": 12
     }
   ]
 }
