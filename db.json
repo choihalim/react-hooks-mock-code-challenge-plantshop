@@ -41,6 +41,36 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "ge",
+      "image": "ge",
+      "price": "111",
+      "id": 8
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "price": "999",
+      "id": 9
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "price": "999",
+      "id": 10
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "price": "999",
+      "id": 11
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "price": "999",
+      "id": 12
     }
   ]
 }
