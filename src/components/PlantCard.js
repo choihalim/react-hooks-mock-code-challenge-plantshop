@@ -5,7 +5,6 @@ function PlantCard({ plant, onDeletePlant, updatePrice }) {
   const [updatedPrice, setUpdatedPrice] = useState(0);
 
   function onUpdatedPrice() {
-    console.log(updatedPrice)
     updatePrice(plant, updatedPrice);
   }
 

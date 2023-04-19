@@ -45,8 +45,14 @@
     {
       "name": "gg",
       "image": "test",
-      "price": 0.03,
+      "price": 10000,
       "id": 8
+    },
+    {
+      "name": "test",
+      "image": "test",
+      "price": 100,
+      "id": 9
     }
   ]
 }

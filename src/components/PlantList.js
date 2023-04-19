@@ -3,7 +3,8 @@ import PlantCard from "./PlantCard";
 
 function PlantList({ plants, onDeletePlant, updatePrice }) {
   const renderPlants = plants.map(plant =>
-    <PlantCard key={plant.id}
+    <PlantCard 
+      key={plant.id}
       plant={plant}
       onDeletePlant={onDeletePlant}
       updatePrice={updatePrice}

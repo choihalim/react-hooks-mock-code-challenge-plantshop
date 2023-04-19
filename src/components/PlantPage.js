@@ -15,8 +15,8 @@ function PlantPage() {
       .then(setPlants)
   }
 
-  function updatePrice(plant, updatedPrice) {
-    fetch(`${plantsURL}${plant.id}`, {
+  function updatePrice(updatedPricePlant, updatedPrice) {
+    fetch(`${plantsURL}${updatedPricePlant.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -24,7 +24,12 @@ function PlantPage() {
       body: JSON.stringify({ "price": Number(updatedPrice) })
     })
       .then(res => res.json())
-      .then(updatedPlant => setPlants([...plants, updatedPlant]));
+      .then(updatedPlant => {
+        const updatedPlants = plants.map(plant =>
+          plant.id === updatedPlant.id ? updatedPlant : plant
+        );
+        setPlants(updatedPlants);
+      });
   }
 
   function onDeletePlant(deletedPlant) {
